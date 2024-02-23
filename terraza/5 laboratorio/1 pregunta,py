@@ -1,0 +1,75 @@
+# 1 ejercicio
+# Definir la clase Nodo
+class Nodo:
+    def __init__(self, dato):#constructor
+        self.dato = dato# creamos un atributo llamdado dato
+        self.siguiente = None#creamos un atributo llamado siguiente pero esta basio o nada
+        self.anterior = None#creamos un atributo llamado anterior pero esta basio o nada
+
+# Definir la clase ListaEnlazada
+class ListaEnlazada:# creamos una clase llamada ListaEnlazada
+    def __init__(self):# constructor
+        self.primero = None # creamos un atributo llamado primero pero esta basio o nada
+        self.ultimo = None # creamos un atributo llamado anterior pero esta basio o nada
+
+    def agregar_nodo(self, dato): # creamos un metodo llamado agregar_nodo
+        nuevo_nodo = Nodo(dato) # creamos un nuevo nodo llamado nuevo_nodo
+        if self.primero is None: # si el primero es None
+            self.primero = nuevo_nodo # el primero es el nuevo_nodo
+            self.ultimo = nuevo_nodo # el anterior es el nuevo_nodo
+        else:
+            nuevo_nodo.anterior = self.ultimo # el nuevo_nodo anterior es el anterior
+            self.ultimo.siguiente = nuevo_nodo # el nuevo_nodo siguiente es el nuevo_nodo
+            self.ultimo = nuevo_nodo # el nuevo_nodo es el nuevo_nodo
+
+    def duplicar_nodos(self): # creamos un metodo llamado duplicar_nodos
+        nodo_actual = self.primero # creamos un nodo actual llamado nodo_actual
+        while nodo_actual is not None: # mientras el nodo actual no sea None
+            nuevo_nodo = Nodo(nodo_actual.dato) # creamos un nuevo nodo llamado nuevo_nodo
+            nuevo_nodo.siguiente = nodo_actual.siguiente# el nuevo_nodo siguiente es el nodo_actual siguiente
+            nodo_actual.siguiente = nuevo_nodo # el nodo_actual siguiente es el nuevo_nodo
+            if nuevo_nodo.siguiente is not None: # si el nuevo_nodo siguiente no sea None
+                nuevo_nodo.siguiente.anterior = nuevo_nodo # el nuevo_nodo siguiente anterior es el nuevo_nodo
+            if nodo_actual == self.ultimo: # si el nodo_actual es el nuevo_nodo
+                self.ultimo = nuevo_nodo # el nuevo_nodo es el nuevo_nodo
+            nodo_actual = nuevo_nodo.siguiente # el nodo_actual es el nuevo_nodo siguiente
+
+    def imprimir_adelante(self): # creamos un metodo llamado imprimir_adelante
+        nodo_actual = self.primero # creamos un nodo actual llamado nodo_actual que invoca sef.siguiente 
+        while nodo_actual is not None: # mientras el nodo actual no sea None
+            print(nodo_actual.dato) # imprimimos el nodo actual
+            nodo_actual = nodo_actual.siguiente # el nodo actual es el nodo_actual siguiente
+
+    def imprimir_atras(self):
+        nodo_actual = self.ultimo # creamos un nodo actual llamado nodo_actual que invoca sef.anterior
+        while nodo_actual is not None: # mientras el nodo actual no sea None
+            print(nodo_actual.dato)
+            nodo_actual = nodo_actual.anterior 
+# mientras el nodo actual no sea None se enprimira en pantalla nodo:actual.dato y el nodo actual es el nodo_actual anterior
+# Crear una instancia de la lista enlazada
+lista = ListaEnlazada()
+
+# Agregar nodos a la lista
+lista.agregar_nodo(1)
+lista.agregar_nodo(2)
+lista.agregar_nodo(3)
+lista.agregar_nodo(4)
+
+# Duplicar los nodos
+lista.duplicar_nodos()
+
+# Imprimir la lista original hacia adelante
+print("Lista original hacia adelante:")
+lista.imprimir_adelante()
+
+# Imprimir la lista duplicada hacia adelante
+print("Lista duplicada hacia adelante:")
+lista.imprimir_adelante()
+
+# Imprimir la lista original hacia atrás
+print("Lista original hacia atrás:")
+lista.imprimir_atras()
+
+# Imprimir la lista duplicada hacia atrás
+print("Lista duplicada hacia atrás:")
+lista.imprimir_atras()

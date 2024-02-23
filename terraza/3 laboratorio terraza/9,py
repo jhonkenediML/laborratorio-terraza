@@ -1,0 +1,6 @@
+def longitud(n,e):
+    l={palabra for palabra in e if len(palabra )==n}
+    return l
+s = {"casa", "perro", "gato", "sol", "luna", "auto"}
+print(longitud(int(4),s))
+

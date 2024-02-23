@@ -1,0 +1,6 @@
+A= input("Ingrese una palabra para verificar si es un palíndromo: ")
+A = A.lower()
+if A ==A[::-1]:
+    print("La palabra",A," es un palíndromo")
+else:
+    print("La palabra",A," no es un palíndromo.")
