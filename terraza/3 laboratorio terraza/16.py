@@ -1,3 +1,4 @@
+# ejercicio 16
 def palabras_palindromas_ordenadas(conjunto_palabras):
     """
     Esta función recibe un conjunto de palabras

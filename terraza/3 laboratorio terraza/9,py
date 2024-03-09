@@ -1,3 +1,4 @@
+#ejercicio 9
 def longitud(n,e):
     l={palabra for palabra in e if len(palabra )==n}
     return l

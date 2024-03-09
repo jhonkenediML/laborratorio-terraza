@@ -1,3 +1,4 @@
+# ejerccio 3
 def numeros_divisibles(conjunto, divisor):
     divisibles = set()
     for numero in conjunto:

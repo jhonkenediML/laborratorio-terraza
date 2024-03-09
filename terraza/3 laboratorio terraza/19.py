@@ -1,3 +1,4 @@
+# ejercicio 19
 def numeros_ordenados_y_sin_duplicados(conjunto):
     numeros_ordenados = sorted(list(conjunto))
     return set(numeros_ordenados)

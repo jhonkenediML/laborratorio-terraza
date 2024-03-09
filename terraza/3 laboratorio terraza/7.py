@@ -1,3 +1,4 @@
+#ejercicio 7
 def son_anagramas(palabra1, palabra2):
     return sorted(palabra1) == sorted(palabra2)
 

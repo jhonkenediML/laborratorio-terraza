@@ -1,3 +1,4 @@
+#ejercicio 10
 def palabras(cnpalabras,letra):
     b={palabra for palabra in cnpalabras if letra in palabra}
     return b

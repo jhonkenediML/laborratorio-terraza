@@ -1,3 +1,4 @@
+#ejercicio 13
 def numeros_duplicados(conjunto):
     duplicados = set()
     for num in conjunto:

@@ -1,3 +1,4 @@
+# ejercicio 8
 def palabras_palindromas(conjunto_palabras):
     """
     Esta función recibe un conjunto de palabras

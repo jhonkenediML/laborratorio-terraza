@@ -1,3 +1,4 @@
+#ejercicio 1
 def es_primo(numero):
     if numero < 2:
         return False
